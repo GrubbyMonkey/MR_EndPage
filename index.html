@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lizzle</title>
+  <title>LexiconQuest</title>
   <style>
     body {
       font-family: 'Playfair Display', serif;
@@ -65,8 +65,8 @@
 </head>
 <body>
   <div class="container">
-    <h1>Lizzle</h1>
-    <h2>Explore the world of words</h2>
+    <h1>LexiconQuest</h1>
+    <h2>Sprint through the staircase of knowledge</h2>
     <p>Enter the sentence that you have formed from the book titles</p>
     <form id="sentenceForm">
       <input type="text" id="sentenceInput" placeholder="Type your sentence here" required>
@@ -76,20 +76,23 @@
     <div class="emoji" id="emoji"></div> <!-- Emoji container -->
   </div>
 
-  <script>
-    document.getElementById("sentenceForm").addEventListener("submit", function(event) {
-      event.preventDefault();
-      var sentence = document.getElementById("sentenceInput").value.toLowerCase();
-      var resultText = document.getElementById("resultText");
-      var emojiContainer = document.getElementById("emoji");
-      if (sentence === "Child development happens through education" || sentence === "Educarion makes child development easy") {
-        resultText.textContent = "Congratulations! You win";
-        emojiContainer.innerHTML = "🎉"; // Confetti emoji
-      } else {
-        resultText.textContent = "Incorrect! You lose...";
-        emojiContainer.innerHTML = "😢"; // Crying baby emoji
-      }
-    });
-  </script>
+<script>
+  document.getElementById("sentenceForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var sentence = document.getElementById("sentenceInput").value.trim().toLowerCase(); // Trim whitespace and convert to lowercase
+    var resultText = document.getElementById("resultText");
+    var emojiContainer = document.getElementById("emoji");
+    if (sentence === "child development happens by good education") { // Adjusted to lowercase
+      resultText.textContent = "Congratulations! You win";
+      emojiContainer.innerHTML = "🎉"; // Confetti emoji
+    } else {
+      resultText.textContent = "Incorrect! You lose...";
+      emojiContainer.innerHTML = "😢"; // Crying baby emoji
+    }
+  });
+</script>
+
+
+
 </body>
 </html>
